@@ -28,6 +28,9 @@ hs_err_pid*
 *.ipr
 *.iws
 
+# Compiled output
+out/
+
 # Eclipse
 .classpath
 .project
