@@ -33,7 +33,7 @@ src/main/java/employee/management/system/
 ├── Splash.java
 ├── Main_class.java
 └── conn.java
-
+ 
 ## Project Highlights
 - Fully functional desktop application  
 - Real-time database connectivity  
