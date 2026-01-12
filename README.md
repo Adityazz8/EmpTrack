@@ -1,45 +1,101 @@
-# EmpTrack
+# Employee Management System ✅
 
-EmpTrack is a **Java-based Employee Management System** that allows users to manage employee records through a simple and interactive desktop application.  
-The project represents a complete working model with database connectivity and user authentication.
+**A lightweight Java Swing application for basic employee CRUD (Create, Read, Update, Delete) operations with MySQL.**
 
-## Overview
-EmpTrack enables users to log in and perform essential employee management operations such as adding, viewing, updating, searching, and deleting employee records.  
-It demonstrates how Java applications interact with a database in a real-world scenario.
+---
 
-## Features
-- Secure user login  
-- Splash screen on application startup  
-- Add employee details  
-- View employee records  
-- Update employee information  
-- Remove employee records  
-- Database-backed operations  
+## 🚀 Summary
 
-## Tech Stack
-- **Java** – Core application logic  
-- **MongoDB** – Database for storing employee records  
-- **XAMPP** – Local server environment  
-- **Maven** – Project build and dependency management  
-- **Git & GitHub** – Version control  
+This project provides a clean, dark-styled desktop UI to manage employee records: add, view, update, and remove employees, plus a simple login screen. It's built with Java (Swing) and uses a MySQL database for persistence.
 
-## Project Structure
-src/main/java/employee/management/system/
-├── AddEmployee.java
-├── RemoveEmployee.java
-├── UpdateEmployee.java
-├── View_Employee.java
-├── Login.java
-├── Splash.java
-├── Main_class.java
-└── conn.java
- 
-## Project Highlights
-- Fully functional desktop application  
-- Real-time database connectivity  
-- Clean and modular Java code  
-- Practical implementation of CRUD operations  
+## 🔧 Features
 
-## Author
-**Aditya Borse**  
-GitHub: https://github.com/Adityazz8
+- Add new employee records (ID auto-generated in UI)
+- View and search records (print support)
+- Update employee details
+- Remove employee entries
+- Simple login screen (credentials stored in `login` table)
+- Polished dark-themed Swing UI components
+
+## 🧩 Tech stack
+
+- Java 8 (source/target set to 1.8)
+- Swing UI
+- MySQL (database)
+- JCalendar (`com.toedter: jcalendar`) used for date picker
+- rs2xml (`net.proteanit:rs2xml`) for ResultSet -> TableModel conversion
+- (Optional) Maven for build management
+
+## 📋 Project layout
+
+```
+employee management system/
+├─ pom.xml
+├─ README.md
+└─ src/main/java/employee/management/system/
+   ├─ AddEmployee.java
+   ├─ View_Employee.java
+   ├─ UpdateEmployee.java
+   ├─ RemoveEmployee.java
+   ├─ Login.java
+   ├─ Splash.java
+   ├─ Main_class.java
+   └─ conn.java
+```
+
+---
+
+## ⚙️ Prerequisites
+
+- JDK 8 or later
+- MySQL Server (or compatible) running locally or accessible from the app
+- (If using Maven) Maven 3.x
+- Add the required external JARs to classpath (or use Maven dependencies shown below):
+  - mysql-connector-java
+  - jcalendar (toedter)
+  - rs2xml (net.proteanit)
+
+> Tip: Using an IDE (IntelliJ IDEA / Eclipse) is the easiest way to add the JARs and run the GUI.
+
+---
+
+## 🗄 Database setup
+
+Create a database and the minimal tables used by the app. Example SQL:
+
+```sql
+CREATE DATABASE employee;
+USE employee;
+
+CREATE TABLE employee (
+  empId VARCHAR(50) PRIMARY KEY,
+  name VARCHAR(100),
+  father_name VARCHAR(100),
+  dob VARCHAR(50), -- stored as string by the UI (can be changed to DATE)
+  salary VARCHAR(50),
+  address TEXT,
+  phone VARCHAR(30),
+  email VARCHAR(100),
+  education VARCHAR(50),
+  designation VARCHAR(50),
+  aadhar VARCHAR(50)
+);
+
+CREATE TABLE login (
+  username VARCHAR(50) PRIMARY KEY,
+  password VARCHAR(100) -- currently plaintext in the app; consider hashing
+);
+
+-- Example default user (change password immediately):
+INSERT INTO login (username, password) VALUES ('admin','admin');
+```
+
+## 🤝 Contributing
+
+Open an issue or submit a PR. Please include a short description of the change and any steps to reproduce or test it.
+
+## 📄 License
+
+Add your preferred license (MIT/Apache-2.0/etc.) or add one to the repo. If you want, I can add an example `LICENSE` file.
+
+---
