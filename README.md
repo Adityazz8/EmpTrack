@@ -90,12 +90,3 @@ CREATE TABLE login (
 INSERT INTO login (username, password) VALUES ('admin','admin');
 ```
 
-## 🤝 Contributing
-
-Open an issue or submit a PR. Please include a short description of the change and any steps to reproduce or test it.
-
-## 📄 License
-
-Add your preferred license (MIT/Apache-2.0/etc.) or add one to the repo. If you want, I can add an example `LICENSE` file.
-
----
